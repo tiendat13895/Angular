@@ -1,0 +1,52 @@
+:host{
+    display:block;
+}
+
+.menu{
+    margin-top: 520px;
+    height: 80px;
+    color: gray;
+}
+
+h2{
+    float:left;
+}
+
+.menu img{
+    width: 30px;
+    float: right;
+    display: block;
+    border: 2px solid silver;
+}
+
+.img-3{
+    padding: 5px 5px;
+    margin:0 20px;
+    border-radius: 100%;
+}
+
+.img-2{
+    padding: 5px 15px 5px 30px;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+
+.img-1{
+    padding: 5px 30px 5px 15px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+input{
+    float: right;
+    margin: 10px 10px;
+}
+
+button{
+    float:right;
+    background-image: url('/assets/search.png');
+    object-fit: cover;
+    width:35px;
+    height: 35px;
+    border-radius:100px;
+}

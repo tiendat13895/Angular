@@ -1,0 +1,32 @@
+:host {
+    display: block;
+    background-color: whitesmoke;
+    color: gray;
+    font-weight: bold;
+}
+.logo{
+    float:left;
+}
+
+header {
+    display: flex;  
+}
+.menu { 
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.r-line{
+    border-right: 3px solid silver;    
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+ul > li {
+    display: inline-block;
+    padding: 1rem 1rem;
+}
