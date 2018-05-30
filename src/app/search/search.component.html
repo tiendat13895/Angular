@@ -2,6 +2,6 @@
   <h2>POPULAR E-BOOKS</h2>
   <img class="img-1" src="assets/grid.png" alt="">
   <img class="img-2" src="assets/menubt.png" alt="">
-  <input *ngIf="show" type="search" placeholder="Search book" [(ngModel)]="keyword">
-  <button (click)="search()"></button>
+  <input *ngIf="show" type="search" placeholder="Search book" [(ngModel)]="keyword" (ngModelChange)="search()">
+  <button (click)="showinput()"></button>
 </div>

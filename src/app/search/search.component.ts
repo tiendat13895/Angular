@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { delay } from 'q';
 
 @Component({
   selector: 'app-search',
@@ -6,15 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  show : boolean = true;
-  keyword: String = '';
+  show: boolean = true;
+  @Input() keyword: String = '';
+  @Output() changeKeyword = new EventEmitter<String>();
   constructor() { }
 
   ngOnInit() {
   }
 
-  search() {
-    alert(this.keyword);
+  showinput() {
     this.show = !this.show;
+  }
+
+  search() {
+    // alert(this.keyword);
+    this.changeKeyword.emit(this.keyword);
   }
 }

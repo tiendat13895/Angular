@@ -6,6 +6,8 @@ import { HeaderComponent } from './header/header.component';
 import { LibraryComponent } from './library/library.component';
 import { BookComponent } from './book/book.component';
 import { SearchComponent } from './search/search.component';
+import { DetailsComponent } from './details/details.component';
+import { InStockPipe } from './pipes/instock.pipe';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { SearchComponent } from './search/search.component';
     LibraryComponent,
     BookComponent,
     SearchComponent,
+    DetailsComponent,
+    InStockPipe
   ],
   imports: [
     BrowserModule,
