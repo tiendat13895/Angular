@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { IBook } from './../interfaces/IBook';
+import { BookService } from './../services/book.service';
 
 @Component({
   selector: 'app-library',
@@ -9,49 +10,28 @@ import { IBook } from './../interfaces/IBook';
 export class LibraryComponent implements OnInit, OnChanges {
 
   books: IBook[] = []
-  originBooks: IBook[]= [{
-    cover: 'assets/book-cover-1.png',
-    title: 'Lap trinh C++',
-    price: 10000,
-    instock: true
-  }, {
-    cover: 'assets/book-cover-3.png',
-    title: 'Angular',
-    price: 10000,
-    instock: true
-  }, {
-    cover: 'assets/book-cover-5.png',
-    title: 'Front End',
-    price: 10000,
-    instock: true
-  }, {
-    cover: 'assets/book-cover-4.png',
-    title: 'MongoDB',
-    price: 10000,
-    instock: true
-  }, {
-    cover: 'assets/Book-cover-2.png',
-    title: 'NodeJS',
-    price: 10000,
-    instock: true
-  }, {
-    cover: 'assets/Book-cover-2.png',
-    title: 'NodeJS',
-    price: 10000,
-    instock: true
-  }];
+  originBooks: IBook[] = [];
+  selectedBook: IBook;
+  @Input() keyword = '';
 
-  constructor() { }
+  constructor(private bookService: BookService) { }
 
   ngOnInit() {
+    this.books = this.bookService.getBooks();
   }
 
   ngOnChanges() {
-    this.searchBook(this.keyword);
+    // this.searchBook(this.keyword);
+  }
+
+
+
+  selectBook(book: IBook) {
+    this.selectedBook = book;
   }
 
   // originBooks: IBook[] = [];
-  @Input() keyword = '';
+
 
   searchBook(keyword: string) {
     this.books = this.originBooks.filter(book => book.title.toLowerCase().includes(keyword.toLowerCase()));

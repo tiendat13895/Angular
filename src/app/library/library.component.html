@@ -1,5 +1,6 @@
 <div class="bookshelf">
-  <div class="book" *ngFor="let book of books">
+  <h3> Downloading Book: {{selectedBook?.title}}</h3>
+  <div class="book" *ngFor="let book of books | bookfilter: keyword">
     <app-details [book]="book" (select)="selectBook($event)"></app-details>
   </div>
 

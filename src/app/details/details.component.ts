@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IBook } from './../interfaces/IBook';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-details',
@@ -10,18 +11,21 @@ export class DetailsComponent implements OnInit {
 
   @Input() book: IBook;
   @Output() select = new EventEmitter<any>();
-  constructor() { }
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
 
-  down(){
-        alert(`You want to buy ${this.book.title.toUpperCase()} book?`);
-  }
+  // down(){
+  //       alert(`You want to buy ${this.book.title.toUpperCase()} book?`);
+  // }
 
-  selectBook() {
+  selectBook(book: IBook) {
     // console.log(this.book.title);
-    this.select.emit(this.book);
+    if(this.authService.user.username === 'dat'){
+      this.select.emit(this.book);
+    }
   }
 
 }

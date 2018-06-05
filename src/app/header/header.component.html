@@ -6,9 +6,9 @@
       <ul>
         <li class="nav-menu">E-BOOKS</li>
         <li class="nav-menu r-line">CLASS</li>
-        <li class="nav-menu">LOG IN</li>
         <li class="nav-menu">SIGN UP</li>
-        <li class="nav-menu" style="float:right"><img src="assets/search.png" alt=""></li>
+        <li class="nav-menu" *ngIf="user?.username">{{user?.username}}</li>
+        <li class="nav-menu" *ngIf="!user?.username"><button (click)="openDialog()">LOG IN</button></li>
       </ul>
     </div>
 </header>
