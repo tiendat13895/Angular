@@ -1,9 +1,13 @@
-<div class="book">
-  <img [src]="book.cover" [alt]="book.title">
+<div class="book" (mouseleave)="hideBackdrop()">
+  <img [src]="book.cover" [alt]="book.title" (mouseenter)="showBackdrop()">
   <h3>{{book.title | uppercase}}</h3>
   <p>{{book.price | currency:'VND':true}}</p>
   <p>{{book.instock | instock}}</p>
   <div class="button">
     <button (click)="selectBook(book)">GET IT NOW</button>
   </div>
+  <div *ngIf="isBackdrop" class="backdrop">
+      <button mat-raised-button color="warn" (click)="openEditBookDialog(book)">Edit</button>
+      <button style="float:right" mat-raised-button color="warn" (click)="openRemoveBookDialog(book)">Remove</button>
+    </div>
 </div>

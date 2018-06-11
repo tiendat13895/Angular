@@ -1,0 +1,46 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "cover": "assets/book-cover-1.png",
+      "title": "Lap trinh C++",
+      "price": "20000",
+      "instock": true
+    },
+    {
+      "id": 2,
+      "cover": "assets/book-cover-3.png",
+      "title": "Angular",
+      "price": 10000,
+      "instock": true
+    },
+    {
+      "id": 3,
+      "cover": "assets/book-cover-5.png",
+      "title": "Front End",
+      "price": 10000,
+      "instock": true
+    },
+    {
+      "id": 4,
+      "cover": "assets/book-cover-4.png",
+      "title": "MongoDB",
+      "price": 10000,
+      "instock": true
+    },
+    {
+      "id": 5,
+      "cover": "assets/Book-cover-2.png",
+      "title": "NodeJS",
+      "price": 10000,
+      "instock": true
+    },
+    {
+      "id": 6,
+      "cover": "assets/Book-cover-2.png",
+      "title": "NodeJS",
+      "price": 10000,
+      "instock": true
+    }
+  ]
+}

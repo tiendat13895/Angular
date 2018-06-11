@@ -12,7 +12,14 @@ import { InStockPipe } from './pipes/instock.pipe';
 import { AuthService } from './services/auth.service';
 import { BookService } from './services/book.service';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 import { BookFilterPipe } from './pipes/bookfilter.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { AddBookComponent } from './add-book/add-book.component';
+import { EditBookComponent } from './edit-book/edit-book.component';
+import { RemoveBookComponent } from './remove-book/remove-book.component';
 
 
 @NgModule({
@@ -25,16 +32,26 @@ import { BookFilterPipe } from './pipes/bookfilter.pipe';
     DetailsComponent,
     InStockPipe,
     LoginDialogComponent,
-    BookFilterPipe
+    BookFilterPipe,
+    AddBookComponent,
+    EditBookComponent,
+    RemoveBookComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    HttpClientModule,
+    MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule
   ],
   entryComponents: [
-    LoginDialogComponent
+    LoginDialogComponent,
+    AddBookComponent,
+    EditBookComponent,
+    RemoveBookComponent
   ],
   providers: [BookService, AuthService],
   bootstrap: [AppComponent]

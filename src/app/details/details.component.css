@@ -1,5 +1,6 @@
 :host{
     display:block;
+    position: relative;
 }
 
 img {
@@ -9,7 +10,7 @@ h3,p {
     text-align: center;
 }
 
-.button>button{
+.button > button{
     font-weight: bold;
     margin: auto;
     font-size: 8pt;
@@ -21,3 +22,19 @@ h3,p {
     border-radius: 50px;
     box-shadow:  0px 8px 20px silver;
 }
+
+.backdrop {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(128, 128, 128, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .backdrop button {
+      margin: 1rem;
+  }
