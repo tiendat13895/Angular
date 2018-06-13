@@ -19,19 +19,17 @@ export class AddBookComponent implements OnInit {
     publishDate: new Date(Date.now()),
     title: ''
   };
-  
+
   constructor(private bookService: BookService,
     public dialogRef: MatDialogRef<AddBookComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
-    this.book = data;
   }
 
   ngOnInit() {
   }
 
   addBook(book: IBook) {
-    this.bookService.createBook(book).subscribe(data => {
-      this.dialogRef.close(book);
-    });
+    this.bookService.createBook(book);
+    this.dialogRef.close();
   }
 }

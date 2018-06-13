@@ -1,10 +1,11 @@
 <div class="bookshelf">
   <h3> Downloading Book: {{selectedBook?.title}}</h3>
   <div class="book" *ngFor="let book of books | bookfilter: keyword">
-    <app-details [book]="book" (select)="selectBook($event)"></app-details>
+    <app-details [book]="book"></app-details>
+    <!-- <app-details [book]="book" (select)="selectBook($event)"></app-details> -->
   </div>
 
-  <div *ngIf="books.length === 0" class="no-content">
+  <div *ngIf="books?.length === 0" class="no-content">
     No book in the bookshelf
   </div>
 </div>

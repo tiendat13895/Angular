@@ -19,7 +19,7 @@ export class EditBookComponent implements OnInit {
     publishDate: new Date(Date.now()),
     title: ''
   };
-  
+
   constructor(private bookService: BookService,
     public dialogRef: MatDialogRef<AddBookComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
@@ -30,9 +30,8 @@ export class EditBookComponent implements OnInit {
   }
 
   editBook(book: IBook) {
-    this.bookService.editBook(book).subscribe(data => {
-      this.dialogRef.close(book);
-    });
+    this.bookService.editBook(book);
+    this.dialogRef.close(book);
   }
 
 }

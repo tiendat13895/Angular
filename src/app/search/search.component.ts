@@ -21,30 +21,30 @@ export class SearchComponent implements OnInit {
   constructor(private bookService: BookService, public dialog: MatDialog) { }
 
   ngOnInit() {
-    this.bookService.getBooks().subscribe(books => {
-      this.books = books as IBook[];
-      // this.originBooks = books as IBook[];
-    });
+    const observer = {
+      next: function (data) {
+        this.books = data;
+      }.bind(this),
+      error: function(err) {
+        console.log(err);
+      }.bind(this)
+    };
+    this.bookService.books.subscribe(observer);
+    this.bookService.getBooks();
   }
 
   showinput() {
     this.show = !this.show;
   }
 
-  search() {
-    // alert(this.keyword);
+  search(key: string) {
     this.changeKeyword.emit(this.keyword);
   }
 
   openAddBookDialog() {
     const dialogRef = this.dialog.open(AddBookComponent, {
       width: '400px',
-      height: '400px',
-      data: this.books[0]
-    });
-
-    dialogRef.afterClosed().subscribe(book => {
-      this.books.push(book);
+      height: '400px'
     });
   }
 }

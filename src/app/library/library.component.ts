@@ -2,6 +2,8 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { IBook } from './../interfaces/IBook';
 import { BookService } from './../services/book.service';
 import { MatDialog } from '@angular/material/dialog';
+import { AddBookComponent } from 'src/app/add-book/add-book.component';
+import { EditBookComponent } from 'src/app/edit-book/edit-book.component';
 
 @Component({
   selector: 'app-library',
@@ -17,13 +19,20 @@ export class LibraryComponent implements OnInit, OnChanges {
   @Input() keyword = '';
 
 
-  constructor(private bookService: BookService) {}
+  constructor(private bookService: BookService,public dialog: MatDialog) {}
 
   ngOnInit() {
-    this.bookService.getBooks().subscribe(books => {
-      this.books = books as IBook[];
-      this.originBooks = books as IBook[];
-    });
+    const observer = {
+      next: function (data) {
+        this.books = data;
+        this.originBooks = data;
+      }.bind(this),
+      error: function(err) {
+        console.log(err);
+      }.bind(this)
+    };
+    this.bookService.books.subscribe(observer);
+    this.bookService.getBooks();
   }
 
   ngOnChanges() {
