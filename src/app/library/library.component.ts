@@ -2,8 +2,6 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { IBook } from './../interfaces/IBook';
 import { BookService } from './../services/book.service';
 import { MatDialog } from '@angular/material/dialog';
-import { AddBookComponent } from 'src/app/add-book/add-book.component';
-import { EditBookComponent } from 'src/app/edit-book/edit-book.component';
 
 @Component({
   selector: 'app-library',
@@ -17,9 +15,10 @@ export class LibraryComponent implements OnInit, OnChanges {
   originBooks: IBook[] = [];
   selectedBook: IBook;
   @Input() keyword = '';
+  // @Input() keyword : string = '';
 
 
-  constructor(private bookService: BookService,public dialog: MatDialog) {}
+  constructor(private bookService: BookService, public dialog: MatDialog) { }
 
   ngOnInit() {
     const observer = {
@@ -27,7 +26,7 @@ export class LibraryComponent implements OnInit, OnChanges {
         this.books = data;
         this.originBooks = data;
       }.bind(this),
-      error: function(err) {
+      error: function (err) {
         console.log(err);
       }.bind(this)
     };
@@ -36,7 +35,6 @@ export class LibraryComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    // this.searchBook(this.keyword);
   }
 
 
@@ -48,8 +46,8 @@ export class LibraryComponent implements OnInit, OnChanges {
   // originBooks: IBook[] = [];
 
 
-  searchBook(keyword: string) {
+  onSearch(keyword: string) {
+    // console.log("1");
     this.books = this.originBooks.filter(book => book.title.toLowerCase().includes(keyword.toLowerCase()));
   }
-
 }

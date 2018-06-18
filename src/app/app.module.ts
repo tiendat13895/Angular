@@ -20,6 +20,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddBookComponent } from './add-book/add-book.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
 import { RemoveBookComponent } from './remove-book/remove-book.component';
+import { RouterModule } from '@angular/router';
+import { FileNotFoundComponent } from './file-not-found/file-not-found.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
+import { JtcClassComponent } from './jtc-class/jtc-class.component';
 
 
 @NgModule({
@@ -35,7 +39,10 @@ import { RemoveBookComponent } from './remove-book/remove-book.component';
     BookFilterPipe,
     AddBookComponent,
     EditBookComponent,
-    RemoveBookComponent
+    RemoveBookComponent,
+    FileNotFoundComponent,
+    BookDetailComponent,
+    JtcClassComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +52,18 @@ import { RemoveBookComponent } from './remove-book/remove-book.component';
     MatDialogModule,
     MatInputModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterModule.forRoot([
+      {
+        path: '', component: LibraryComponent
+      },
+      {
+        path: 'book/:id', component: BookDetailComponent
+      }, {
+        path: 'class', component: JtcClassComponent
+      }, {
+        path: '**', component: FileNotFoundComponent
+      }])
   ],
   entryComponents: [
     LoginDialogComponent,

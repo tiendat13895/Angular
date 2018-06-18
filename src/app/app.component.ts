@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Demo';
-  keyword = '';
+  // @Input() keyword = '';
+  // @Output() key = new EventEmitter<String>();
+  // keyword = '';
 
-  change(keyword) {
-    this.keyword = keyword;
-  }
+  // ngOnInit() {
+  //   console.log(this.keyword);
+  // }
+
+
+  // change(keyword) {
+  //   // this.key = keyword;
+  //   console.log(this.keyword);
+  //   // console.log(this.keyword);
+  // }
 }

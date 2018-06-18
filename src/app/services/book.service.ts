@@ -5,6 +5,7 @@ import { Observable, Subject, BehaviorSubject } from 'rxjs';
 @Injectable()
 export class BookService {
 
+
     private _books: BehaviorSubject<IBook[]> = new BehaviorSubject<IBook[]>([]);
     get books() {
         return this._books.asObservable();
@@ -16,6 +17,10 @@ export class BookService {
         return this.http.get('http://localhost:3000/books').subscribe(books => {
             this._books.next(books as IBook[]);
         });
+    }
+
+    getBook(id: number) {
+        return this.http.get('http://localhost:3000/books/' +  id);
     }
 
     createBook(book: IBook) {

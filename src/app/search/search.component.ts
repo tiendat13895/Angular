@@ -12,8 +12,8 @@ import { MatDialog } from '@angular/material/dialog';
 export class SearchComponent implements OnInit {
 
   show: boolean = true;
-  @Input() keyword: '';
-  @Output() changeKeyword = new EventEmitter<String>();
+  @Input() keyword: string = '';
+  @Output() keywordChange = new EventEmitter<String>();
   @Input() books: IBook[];
   originBooks: IBook[] = [];
   selectedBook: IBook;
@@ -25,7 +25,7 @@ export class SearchComponent implements OnInit {
       next: function (data) {
         this.books = data;
       }.bind(this),
-      error: function(err) {
+      error: function (err) {
         console.log(err);
       }.bind(this)
     };
@@ -37,8 +37,9 @@ export class SearchComponent implements OnInit {
     this.show = !this.show;
   }
 
-  search(key: string) {
-    this.changeKeyword.emit(this.keyword);
+  onChange(key: string) {
+    this.keywordChange.emit(key);
+    console.log(key)
   }
 
   openAddBookDialog() {

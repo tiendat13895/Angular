@@ -1,6 +1,8 @@
+<app-search [keyword]="keyword" (keywordChange)="onSearch($event)"></app-search>
 <div class="bookshelf">
   <h3> Downloading Book: {{selectedBook?.title}}</h3>
-  <div class="book" *ngFor="let book of books | bookfilter: keyword">
+  <div class="book" *ngFor="let book of books">
+    <!-- <div class="book" *ngFor="let book of books | bookfilter: keyword"> -->
     <app-details [book]="book"></app-details>
     <!-- <app-details [book]="book" (select)="selectBook($event)"></app-details> -->
   </div>

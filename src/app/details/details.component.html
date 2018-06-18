@@ -1,6 +1,6 @@
 <div class="book" (mouseleave)="hideBackdrop()">
   <img [src]="book.cover" [alt]="book.title" (mouseenter)="showBackdrop()">
-  <h3>{{book.title | uppercase}}</h3>
+  <h3 [routerLink]="['book', book.id]">{{book.title | uppercase}}</h3>
   <p>{{book.price | currency:'VND':true}}</p>
   <p>{{book.instock | instock}}</p>
   <div class="button">

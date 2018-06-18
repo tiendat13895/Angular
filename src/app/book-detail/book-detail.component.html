@@ -1,0 +1,11 @@
+<div class="book-detail">
+  <div class="cover">
+    <img *ngIf="book && book.cover" [src]="book?.cover" alt="">
+    <img *ngIf="!book || !book.cover" src='assets/default.png' alt="">
+  </div>
+  <div class="detail">
+    <h3>Book: {{book?.title}}</h3>
+    <p>Price: {{book?.price | currency:'VND':true}}</p>
+    <button>GET IT NOW</button>
+  </div>
+</div>
