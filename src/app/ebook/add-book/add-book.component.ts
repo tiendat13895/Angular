@@ -1,4 +1,4 @@
-import { BookService } from './../services/book.service';
+import { BookService } from '../../shared';
 import { Component, OnInit, Inject } from '@angular/core';
 import { IBook } from 'src/app/interfaces/IBook';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';

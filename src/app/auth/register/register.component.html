@@ -1,0 +1,40 @@
+<mat-card>
+  <h2>Register</h2>
+  <form [formGroup]="form" (ngSubmit)="register()">
+    <mat-form-field class="form-field">
+      <input matInput type="text" placeholder="Username" id="username" name="username" [formControl]="username">
+      <mat-error *ngIf="username.hasError('required')">
+        Username is
+        <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="username.hasError('minlength')">
+        Username too short
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <input matInput type="email" placeholder="Email" id="email" name="email" [formControl]="email">
+      <mat-error *ngIf="email.hasError('required')">
+        Email is
+        <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <input matInput type="password" placeholder="Password" id="password" name="password" [formControl]="password">
+      <mat-error *ngIf="password.hasError('required')">
+        Password is
+        <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <input matInput type="password" placeholder="confirmPassword" id="confirmPassword" name="confirmPassword" [formControl]="confirmPassword">
+      <mat-error *ngIf="confirmPassword.hasError('MatchPassword')">
+        Password is not
+        <strong>match</strong>
+      </mat-error>
+    </mat-form-field>
+    <button [disabled]="!form.valid" class="btn-login" mat-raised-button color="primary">Register</button>
+  </form>
+</mat-card>

@@ -18,40 +18,40 @@ export class HeaderComponent implements OnInit {
     this.user = this.authService.user;
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(LoginDialogComponent, {
-      width: '250px',
-      height: '400px'
-    });
+  // openDialog() {
+  //   const dialogRef = this.dialog.open(LoginDialogComponent, {
+  //     width: '250px',
+  //     height: '400px'
+  //   });
 
-    dialogRef.afterClosed().subscribe(result => {
-      this.authService.login(result.username, result.password);
-    });
-  }
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     this.authService.login(result.username, result.password);
+  //   });
+  // }
 
 }
 
 
-@Component({
-  selector: 'app-login-dialog',
-  templateUrl: './login.dialog.html',
-})
-export class LoginDialogComponent {
+// @Component({
+//   selector: 'app-login-dialog',
+//   templateUrl: './login.dialog.html',
+// })
+// export class LoginDialogComponent {
 
-  username: string;
-  password: string;
+//   username: string;
+//   password: string;
 
-  constructor(
-    public dialogRef: MatDialogRef<LoginDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+//   constructor(
+//     public dialogRef: MatDialogRef<LoginDialogComponent>,
+//     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
+//   onNoClick(): void {
+//     this.dialogRef.close();
+//   }
 
-  login() {
-    if (this.username && this.password) {
-      this.dialogRef.close({ username: this.username, password: this.password });
-    }
-  }
-}
+//   login() {
+//     if (this.username && this.password) {
+//       this.dialogRef.close({ username: this.username, password: this.password });
+//     }
+//   }
+// }

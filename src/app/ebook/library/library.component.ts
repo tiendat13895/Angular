@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { IBook } from './../interfaces/IBook';
-import { BookService } from './../services/book.service';
+import { IBook } from '../../interfaces/IBook';
+import { BookService } from '../../shared';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({

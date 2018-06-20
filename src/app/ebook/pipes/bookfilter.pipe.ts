@@ -1,4 +1,4 @@
-import { IBook } from './../interfaces/IBook';
+import { IBook } from '../../interfaces/IBook';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({

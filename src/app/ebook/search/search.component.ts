@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { BookService } from './../services/book.service';
-import { IBook } from './../interfaces/IBook';
-import { AddBookComponent } from 'src/app/add-book/add-book.component';
+import { BookService } from '../../shared';
+import { IBook } from '../../interfaces/IBook';
+import { AddBookComponent } from '../add-book/add-book.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({

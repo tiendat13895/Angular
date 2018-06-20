@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Demo';
+  title = 'Janeto EBook';
   // @Input() keyword = '';
   // @Output() key = new EventEmitter<String>();
   // keyword = '';

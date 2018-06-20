@@ -1,0 +1,16 @@
+:host {
+    display: flex;
+    justify-content: center;
+}
+
+mat-card {
+    margin-top: 3rem;
+    max-width: 500px;
+}
+.form-field {
+    width: 100%;
+}
+
+button {
+    margin-top: 1rem;
+}
