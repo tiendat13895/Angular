@@ -17,3 +17,7 @@ form {
 .form-field {
     width: 100%;
 }
+
+.btn-register{
+    float: right;
+}

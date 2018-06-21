@@ -43,5 +43,21 @@
       "publishDate": "2018-06-13T03:40:18.355Z",
       "title": "Say Team"
     }
+  ],
+  "users": [
+    {
+      "id": "tiendat",
+      "username": "tiendat",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "fullname": "Nguyen Tien Dat",
+      "email": "tiendat@gmail.com"
+    },
+    {
+      "id": "admin",
+      "username": "admin",
+      "email": "admin@gmail.com",
+      "password": "123"
+    }
   ]
 }

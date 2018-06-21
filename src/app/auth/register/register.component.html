@@ -12,6 +12,16 @@
       </mat-error>
     </mat-form-field>
     <mat-form-field class="form-field">
+      <input matInput type="text" placeholder="Fullname" id="fullname" name="fullname" [formControl]="fullname">
+      <mat-error *ngIf="fullname.hasError('required')">
+        Fullname is
+        <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="fullname.hasError('minlength')">
+        Fullname too short
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-field">
       <input matInput type="email" placeholder="Email" id="email" name="email" [formControl]="email">
       <mat-error *ngIf="email.hasError('required')">
         Email is

@@ -1,5 +1,8 @@
 export interface IUSer {
+    id: string;
     username: string;
+    fullName?: string;
+    email?: string;
     password: string;
-    fullName: string;
+    // confirmPassword: string;
 }
