@@ -7,10 +7,11 @@
       <li [routerLink]="['library']" class="nav-menu">Ebook</li>
       <li [routerLink]="['class']" class="nav-menu">Class</li>
       <li class="nav-menu">|</li>
-      <li class="nav-menu" *ngIf="user?.username">{{user?.username}}</li>
+      <!-- <li class="nav-menu" *ngIf="user?.username">{{user?.username}}</li> -->
+      <li class="nav-menu" [innerHTML]="(user | async).username"></li>
       <!-- <li class="nav-menu" *ngIf="!user?.username" (click)="openDialog()">LOGIN</li> -->
-      <li class="nav-menu" *ngIf="!user?.username" [routerLink]="['/auth','login']">LOGIN</li>
-      <li class="nav-menu" *ngIf="!user?.username" [routerLink]="['/auth','register']">SIGN UP</li>
+      <!-- <li class="nav-menu" *ngIf="!user?.username" [routerLink]="['/auth','login']">LOGIN</li>
+      <li class="nav-menu" *ngIf="!user?.username" [routerLink]="['/auth','register']">SIGN UP</li> -->
     </ul>
   </div>
 </header>

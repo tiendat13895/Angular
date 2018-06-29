@@ -14,13 +14,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { FileNotFoundComponent } from './file-not-found/file-not-found.component';
 import { AppRoutingModule } from './app.routing';
 import { SharedModule } from './shared';
+import { LayoutComponent } from './layout/layout.component';
+import { AuthGuard } from './services/authGuard.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     // LoginDialogComponent,
-    FileNotFoundComponent
+    FileNotFoundComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ import { SharedModule } from './shared';
   entryComponents: [
     // LoginDialogComponent
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

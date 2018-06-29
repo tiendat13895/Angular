@@ -1,8 +1,8 @@
 export interface IUSer {
-    id: string;
-    username: string;
+    id?: string;
+    username?: string;
     fullName?: string;
     email?: string;
-    password: string;
+    password?: string;
     // confirmPassword: string;
 }

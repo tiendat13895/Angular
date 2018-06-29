@@ -2,6 +2,7 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { IBook } from '../../interfaces/IBook';
 import { BookService } from '../../shared';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-library',
@@ -18,9 +19,13 @@ export class LibraryComponent implements OnInit, OnChanges {
   // @Input() keyword : string = '';
 
 
-  constructor(private bookService: BookService, public dialog: MatDialog) { }
+  constructor(private router: Router, private bookService: BookService, public dialog: MatDialog) { }
 
   ngOnInit() {
+    // if (!localStorage.getItem('username') && !localStorage.getItem('password')) {
+    //   this.router.navigate(['auth', 'login']);
+    // }
+
     const observer = {
       next: function (data) {
         this.books = data;

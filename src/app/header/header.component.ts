@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { IUSer } from './../interfaces/IUser';
 import { AuthService } from 'src/app/services/auth.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 
 export class HeaderComponent implements OnInit {
 
-  user: IUSer;
+  user: Observable<IUSer>;
   constructor(private authService: AuthService, public dialog: MatDialog) { }
 
   ngOnInit() {

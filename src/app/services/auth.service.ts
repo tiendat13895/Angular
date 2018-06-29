@@ -7,20 +7,29 @@ import { BehaviorSubject } from 'rxjs';
 export class AuthService {
 
     private _users: BehaviorSubject<IUSer[]> = new BehaviorSubject<IUSer[]>([]);
+    private _user: BehaviorSubject<IUSer> = new BehaviorSubject<IUSer>({});
 
-    user: IUSer;
+    get user() {
+        return this._user.asObservable();
+    }
     constructor(private http: HttpClient) {
-        // this.user = {
-        //     fullName: '',
-        //     password: '',
-        //     username: ''
-        // };
     }
 
-    // login(username: string, password: string) {
-    //     this.user.username = username;
-    //     this.user.password = password;
-    // }
+    login(username: string, password: string) {
+        if (!username || !password)
+        {
+            return;
+        }
+        const user = {
+            username: username,
+            password: password
+        }
+        localStorage.setItem('username', username);
+        localStorage.setItem('password', password);
+
+        this._user.next(user);
+        
+    }
 
     getUser(id: string) {
         return this.http.get('http://localhost:3000/users/' + id);
