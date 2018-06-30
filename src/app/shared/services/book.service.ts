@@ -14,18 +14,18 @@ export class BookService {
     }
 
     getBooks() {
-        return this.http.get('https://jtcbook.herokuapp.com:3000/books').subscribe(books => {
+        return this.http.get('/books').subscribe(books => {
             this._books.next(books as IBook[]);
         });
     }
 
     getBook(id: number) {
-        return this.http.get('https://jtcbook.herokuapp.com:3000/books/' +  id);
+        return this.http.get('/books/' +  id);
     }
 
     createBook(book: IBook) {
         book.id = Date.now();
-        return this.http.post('https://jtcbook.herokuapp.com:3000/books', book).subscribe(() => {
+        return this.http.post('/books', book).subscribe(() => {
             this._books.getValue().push(book);
             const newBooks = this._books.getValue();
             this._books.next(newBooks);
@@ -33,7 +33,7 @@ export class BookService {
     }
 
     removeBook(id: number) {
-        return this.http.delete('https://jtcbook.herokuapp.com:3000/books/' + id).subscribe(() => {
+        return this.http.delete('/books/' + id).subscribe(() => {
             const index = this._books.getValue().findIndex(b => b.id === id);
             this._books.getValue().splice(index, 1);
             this._books.next(this._books.getValue());
@@ -41,7 +41,7 @@ export class BookService {
     }
 
     editBook(book: IBook) {
-        return this.http.put('https://jtcbook.herokuapp.com:3000/books/' + book.id, book).subscribe(() => {
+        return this.http.put('/books/' + book.id, book).subscribe(() => {
             const index = this._books.getValue().findIndex(b => b.id === book.id);
             this._books.getValue()[index] = book;
             this._books.next(this._books.getValue());
