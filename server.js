@@ -25,6 +25,6 @@ res.sendFile(path.join(__dirname+'/dist/angular/index.html'));
 });
 
 // Start the app by listening on the default Heroku port
-app.listen(process.env.PORT || 8080, ()=>{
-  console.log('server is runing on', 8080)
+app.listen(process.env.PORT || 80, ()=>{
+  console.log('server is runing on', 80)
 });
