@@ -1,30 +1,30 @@
-// server.js
-const jsonServer = require('json-server')
-const server = jsonServer.create()
-const router = jsonServer.router('db.json')
-const middlewares = jsonServer.defaults()
+// // server.js
+// const jsonServer = require('json-server')
+// const server = jsonServer.create()
+// const router = jsonServer.router('db.json')
+// const middlewares = jsonServer.defaults()
 
-server.use(middlewares)
-server.use(router)
-server.listen(3000, () => {
-  console.log('JSON Server is running')
-})
+// server.use(middlewares)
+// server.use(router)
+// server.listen(3000, () => {
+//   console.log('JSON Server is running')
+// })
 
 //Install express server
 const express = require('express');
 const path = require('path');
+var jsonServer = require('json-server');
 
 const app = express();
-
+app.use('api/', jsonServer.router('db.json'));
 // Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/dist/angular'));
-
+app.use(express.static(__dirname + '/dist'));
 app.get('/*', function(req,res) {
-    
-res.sendFile(path.join(__dirname+'/dist/angular/index.html'));
+res.sendFile(path.join(__dirname+'/dist/index.html'));
 });
 
 // Start the app by listening on the default Heroku port
-app.listen(process.env.PORT || 8080, ()=>{
-  console.log('server is runing on', 8080)
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, ()=>{
+  console.log(`server is runing on, ${PORT}`);
 });
