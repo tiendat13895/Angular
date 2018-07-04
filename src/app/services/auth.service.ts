@@ -13,6 +13,11 @@ export class AuthService {
         return this._user.asObservable();
     }
     constructor(private http: HttpClient) {
+        const user: IUSer = {
+            username: localStorage.getItem('username'),
+            password: localStorage.getItem('password')
+        };
+        this._user.next(user);
     }
 
     login(username: string, password: string) {
@@ -32,12 +37,12 @@ export class AuthService {
     }
 
     getUser(id: string) {
-        return this.http.get('http://localhost:3000/users/' + id);
+        return this.http.get('/users/' + id);
     }
 
     createUser(user: IUSer) {
         // user.id = Date.now();
-        return this.http.post('http://localhost:3000/users', user).subscribe(() => {
+        return this.http.post('/users', user).subscribe(() => {
             this._users.getValue().push(user);
             const newUsers = this._users.getValue();
             this._users.next(newUsers);

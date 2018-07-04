@@ -11,7 +11,7 @@ export class BaseIntercepter implements HttpInterceptor {
             url: this.prepareUrl(req.url), setHeaders: {
                 'Content-Type': 'application/json',
                 'Authorization': 'janeto'
-            }
+            }   
         })
 
         return next.handle(req);
