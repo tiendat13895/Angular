@@ -3,6 +3,9 @@ import { IUSer } from './../interfaces/IUser';
 import { AuthService } from 'src/app/services/auth.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-header',
@@ -13,10 +16,16 @@ import { Observable } from 'rxjs';
 export class HeaderComponent implements OnInit {
 
   user: Observable<IUSer>;
-  constructor(private authService: AuthService, public dialog: MatDialog) { }
+  constructor(private AuthService: AuthService, public dialog: MatDialog, private router: Router,private toastr: ToastrService) { }
 
   ngOnInit() {
-    this.user = this.authService.user;
+    this.user = this.AuthService.user;
+  }
+
+  logout() {
+    this.router.navigateByUrl('/auth');
+    this.toastr.success('Log Out', ' Successfull!!');
+    localStorage.clear();
   }
 
   // openDialog() {
@@ -29,7 +38,6 @@ export class HeaderComponent implements OnInit {
   //     this.authService.login(result.username, result.password);
   //   });
   // }
-
 }
 
 

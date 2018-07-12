@@ -21,8 +21,7 @@ export class AuthService {
     }
 
     login(username: string, password: string) {
-        if (!username || !password)
-        {
+        if (!username || !password) {
             return;
         }
         const user = {
@@ -33,7 +32,7 @@ export class AuthService {
         localStorage.setItem('password', password);
 
         this._user.next(user);
-        
+
     }
 
     getUser(id: string) {

@@ -3,7 +3,7 @@
 }
 
 .cover {
-    flex: 1;
+    /* flex: 1; */
     padding: 1rem;
 }
 
@@ -11,8 +11,9 @@
     width: 100%;
 }
 .detail {
+    margin-left: 50px;
     padding: 1rem;
-    flex: 1;
+    /* flex: 1; */
 }
 
  button{

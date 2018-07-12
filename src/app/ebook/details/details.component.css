@@ -8,6 +8,7 @@ img {
 }
 h3,p {
     text-align: center;
+    cursor: pointer;
 }
 
 .button > button{

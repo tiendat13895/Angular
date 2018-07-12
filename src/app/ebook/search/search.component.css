@@ -13,6 +13,7 @@ h2{
 }
 
 .menu img{
+    cursor: pointer;
     float: right;
     display: block;
     border: 2px solid silver;
@@ -30,22 +31,15 @@ h2{
     border-bottom-right-radius: 100px;
 }
 
-.img-3{
-    width: 30px;
-    height: 30px;
-    padding: 5px;
-    border-radius: 100px;
-}
-
-input{
+  .example-full-width {
+    margin: 0 10px;
     float: right;
-    margin: 10px 10px;
-}
+    min-width: 150px;
+    max-width: 300px;
+    width: 100%;
+  }
 
 button{
-    padding: 5px;
     float:right;
-    width: 50px;
-    border: none;
-    background-color: inherit;
+    margin: 10px;
 }

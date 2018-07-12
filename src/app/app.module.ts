@@ -16,6 +16,9 @@ import { AppRoutingModule } from './app.routing';
 import { SharedModule } from './shared';
 import { LayoutComponent } from './layout/layout.component';
 import { AuthGuard } from './services/authGuard.service';
+import { MaterialModule } from './material.module';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { AuthGuard } from './services/authGuard.service';
     LayoutComponent
   ],
   imports: [
+    MaterialModule,
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
@@ -35,6 +39,7 @@ import { AuthGuard } from './services/authGuard.service';
     MatFormFieldModule,
     MatButtonModule,
     AppRoutingModule,
+    ToastrModule.forRoot(),
     SharedModule.forRoot()
   ],
   entryComponents: [

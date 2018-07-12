@@ -11,7 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class SearchComponent implements OnInit {
 
-  show: boolean = true;
+  show: boolean = false;
   @Input() keyword: string = '';
   @Output() keywordChange = new EventEmitter<String>();
   @Input() books: IBook[];

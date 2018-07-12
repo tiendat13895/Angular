@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { IUSer } from '../../interfaces/IUser';
-import { NgForm } from '@angular/forms';
+// import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -29,7 +30,7 @@ export class RegisterComponent implements OnInit {
     Validators.required
   ]);
   form: FormGroup;
-  constructor(fb: FormBuilder, private AuthService: AuthService) {
+  constructor(fb: FormBuilder, private AuthService: AuthService, private toastr: ToastrService) {
     this.form = fb.group({
       username: this.username,
       fulname: this.fullname,
@@ -61,8 +62,9 @@ export class RegisterComponent implements OnInit {
     this.user.password = this.form.value.password;
     // this.user.confirmPassword = this.form.value.confirmPassword;
 
-    console.log(this.user);
+    // console.log(this.user);
     this.AuthService.createUser(this.user);
+    this.toastr.success('Successfull!!', 'Register');
   }
 }
 
@@ -73,10 +75,8 @@ export class PasswordValidation {
     const password = AC.get('password').value; // to get value in input tag
     const confirmPassword = AC.get('confirmPassword').value; // to get value in input tag
     if (password !== confirmPassword) {
-      console.log('false');
       AC.get('confirmPassword').setErrors({ MatchPassword: true });
     } else {
-      console.log('true');
       return;
     }
   }

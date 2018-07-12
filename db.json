@@ -34,14 +34,6 @@
       "title": "NodeJS",
       "price": 10000,
       "instock": true
-    },
-    {
-      "cover": "https://a.wattpad.com/cover/124227785-352-k824360.jpg",
-      "id": 1528861236038,
-      "instock": true,
-      "price": "40000",
-      "publishDate": "2018-06-13T03:40:18.355Z",
-      "title": "Say Team"
     }
   ],
   "users": [

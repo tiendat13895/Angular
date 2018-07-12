@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { IUSer } from '../../interfaces/IUser';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   user: IUSer;
-  constructor(private AuthService: AuthService, private router: Router) { }
+  constructor(private AuthService: AuthService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
   }
@@ -25,13 +26,13 @@ export class LoginComponent implements OnInit {
     this.AuthService.getUser(id).subscribe((data) => {
       this.user = data as IUSer;
       if (this.user.username == form.value.username && this.user.password == form.value.password) {
-        alert("Login Success!!!")
+        this.toastr.success('Successfull!!', 'Login');
         // this.router.navigateByUrl('/library');
         this.router.navigate(['/']);
         this.AuthService.login(form.value.username, form.value.password);
       }
       else {
-        alert("Login Fail!!!")
+        this.toastr.error('Fail!!', ' Login');
       }
     });
   }
