@@ -1,7 +1,6 @@
 import { IBook } from 'src/app/interfaces/IBook';
 import { BookService } from '../../shared';
 import { Component, OnInit, Inject } from '@angular/core';
-import { AddBookComponent } from '../add-book/add-book.component';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 
@@ -15,6 +14,7 @@ export class EditBookComponent implements OnInit {
   book: IBook = {
     cover: '',
     id: 0,
+    url: '',
     instock: true,
     price: 0,
     publishDate: new Date(Date.now()),
@@ -22,7 +22,7 @@ export class EditBookComponent implements OnInit {
   };
 
   constructor(private bookService: BookService, private toastr: ToastrService,
-    public dialogRef: MatDialogRef<AddBookComponent>,
+    public dialogRef: MatDialogRef<EditBookComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
     this.book = data;
   }

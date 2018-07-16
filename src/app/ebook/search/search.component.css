@@ -4,32 +4,21 @@
 
 .menu{
     margin-top: 20px;
-    height: 80px;
+    height: 100px;
     color: gray;
 }
 
 h2{
     float:left;
 }
-
-.menu img{
-    cursor: pointer;
-    float: right;
-    display: block;
-    border: 2px solid silver;
-}
-
-.img-2{
-    padding: 5px 15px 5px 30px;
-    border-top-left-radius: 100px;
-    border-bottom-left-radius: 100px;
-}
-
-.img-1{
-    padding: 5px 30px 5px 15px;
-    border-top-right-radius: 100px;
-    border-bottom-right-radius: 100px;
-}
+.control {
+    /* border: none; */
+    font-size: 1.5rem;
+    border-radius: 100%;
+    padding: 0.5rem;
+    box-shadow:  0px 8px 20px silver;
+    margin-left: 1rem;
+  }
 
   .example-full-width {
     margin: 0 10px;
@@ -43,3 +32,12 @@ button{
     float:right;
     margin: 10px;
 }
+
+button:focus {
+    outline: none;
+  }
+  
+  .control span {
+    width: 2rem;
+  }
+  

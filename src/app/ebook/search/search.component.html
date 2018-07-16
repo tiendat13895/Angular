@@ -6,6 +6,10 @@
   <mat-form-field *ngIf="show" class="example-full-width">
     <input matInput placeholder="Search" type="search" [(ngModel)]="keyword" (blur)="onChange(keyword)" (change)="onChange(keyword)">
   </mat-form-field>
-  <button mat-raised-button color="primary" (click)="showinput()">Search</button>
-  <button mat-raised-button color="accent" (click)="openAddBookDialog()">Add Book</button>
+  <button (click)="showinput()" class="control">
+    <span class="fa fa-search"></span>
+  </button>
+  <button (click)="openAddBookDialog()" class="control">
+    <span class="fa fa-plus"></span>
+  </button>
 </div>

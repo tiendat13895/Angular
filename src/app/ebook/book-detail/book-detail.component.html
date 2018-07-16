@@ -6,6 +6,7 @@
   <div class="detail">
     <h3>Book: {{book?.title}}</h3>
     <p>Price: {{book?.price | currency:'VND':true}}</p>
-    <button>DOWNLOAD</button>
+    <button (click)="openPDFshowDialog(book)">Read Book</button>
   </div>
 </div>
+<app-comment></app-comment>

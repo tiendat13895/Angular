@@ -1,0 +1,22 @@
+<div class="comment-frame">
+  <div class="input-comment">
+    <h2>COMMENT {{comment?.length}}</h2>
+    <img src="assets/person.png" alt="Not Found">
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Leave a comment" id="commentstr" [(ngModel)]="commentstr"></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="addComment()">Comment</button>
+  </div>
+
+  <div class="show-comment" *ngFor="let comment of comments">
+    <img src="assets/person.png" alt="Not Found">
+    <h3>{{comment.username}}</h3>
+    <p class="comment-lenght">{{comment.comment}}</p>
+    <p>{{comment.datetime | date : format : timezone}}</p>
+    <button mat-raised-button>Reply</button>
+  </div>
+
+  <div *ngIf="comments?.length === 0" class="no-comment">
+    <h2>No comment</h2>
+  </div>
+</div>

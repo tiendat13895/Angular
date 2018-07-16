@@ -8,7 +8,11 @@
     <button [routerLink]="['book', book.id]">GET IT NOW</button>
   </div>
   <div *ngIf="isBackdrop" class="backdrop">
-    <button mat-raised-button color="warn" (click)="openEditBookDialog(book)">Edit</button>
-    <button style="float:right" mat-raised-button color="warn" (click)="openRemoveBookDialog(book)">Remove</button>
+    <button style="float:right" mat-raised-button color="warn" (click)="openEditBookDialog(book)">
+      <span class="fa fa-edit"></span>
+    </button>
+    <button style="float:right" mat-raised-button color="warn" (click)="openRemoveBookDialog(book)">
+      <span class="fa fa-remove"></span>
+    </button>
   </div>
 </div>

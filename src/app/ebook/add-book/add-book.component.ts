@@ -1,7 +1,7 @@
 import { BookService } from '../../shared';
 import { Component, OnInit, Inject } from '@angular/core';
 import { IBook } from 'src/app/interfaces/IBook';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -14,6 +14,7 @@ export class AddBookComponent implements OnInit {
   book: IBook = {
     cover: '',
     id: 0,
+    url: '',
     instock: true,
     price: 0,
     publishDate: new Date(Date.now()),

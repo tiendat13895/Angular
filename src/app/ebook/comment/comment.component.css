@@ -1,0 +1,35 @@
+host{
+    width:100%;
+    margin:0;
+}
+
+img{
+    width:10%;
+}
+.example-full-width {
+    width: 60%;
+    padding: 2%;
+}
+
+.input-comment{
+    border-bottom: 2px solid silver;
+    width: 90%;
+}
+
+.show-comment{
+    padding: 20px;
+}
+
+.show-comment img{
+    width: 6%;
+    float: left;
+    padding-right: 30px;
+}
+
+.no-comment{
+    padding: 10px;
+}
+
+.comment-lenght{
+    margin-left:6.5%;
+}

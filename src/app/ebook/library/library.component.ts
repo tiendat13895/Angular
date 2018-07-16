@@ -22,10 +22,6 @@ export class LibraryComponent implements OnInit, OnChanges {
   constructor(private router: Router, private bookService: BookService, public dialog: MatDialog) { }
 
   ngOnInit() {
-    // if (!localStorage.getItem('username') && !localStorage.getItem('password')) {
-    //   this.router.navigate(['auth', 'login']);
-    // }
-
     const observer = {
       next: function (data) {
         this.books = data;
@@ -41,15 +37,6 @@ export class LibraryComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
   }
-
-
-
-  // selectBook(book: IBook) {
-  //   this.selectedBook = book;
-  // }
-
-  // originBooks: IBook[] = [];
-
 
   onSearch(keyword: string) {
     // console.log("1");

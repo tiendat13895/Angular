@@ -1,8 +1,6 @@
 import { EditBookComponent } from './../edit-book/edit-book.component';
-import { BookService } from '../../shared';
 import { IBook } from '../../interfaces/IBook';
-import { Component, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { RemoveBookComponent } from '../remove-book/remove-book.component';
 
@@ -15,9 +13,8 @@ export class DetailsComponent implements OnInit {
   @Input() book: IBook;
   @Output() remove = new EventEmitter<any>();
   isBackdrop = false;
-  constructor(private authService: AuthService,
-    private bookService: BookService,
-    private dialog: MatDialog) { }
+
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }
