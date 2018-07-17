@@ -15,7 +15,7 @@ export class AuthService {
     constructor(private http: HttpClient) {
         const user: IUSer = {
             username: localStorage.getItem('username'),
-            password: localStorage.getItem('password')
+            password: localStorage.getItem('password'),
         };
         this._user.next(user);
     }
@@ -48,5 +48,3 @@ export class AuthService {
         });
     }
 }
-
-

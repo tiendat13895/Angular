@@ -20,11 +20,11 @@ import { MaterialModule } from './material.module';
 import { ToastrModule } from 'ngx-toastr';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    // LoginDialogComponent,
     FileNotFoundComponent,
     LayoutComponent
   ],
@@ -43,7 +43,6 @@ import { ToastrModule } from 'ngx-toastr';
     SharedModule.forRoot()
   ],
   entryComponents: [
-    // LoginDialogComponent
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

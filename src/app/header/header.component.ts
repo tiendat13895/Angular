@@ -16,7 +16,7 @@ import { ToastrService } from 'ngx-toastr';
 export class HeaderComponent implements OnInit {
 
   user: Observable<IUSer>;
-  constructor(private AuthService: AuthService, public dialog: MatDialog, private router: Router,private toastr: ToastrService) { }
+  constructor(private AuthService: AuthService, public dialog: MatDialog, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.user = this.AuthService.user;
@@ -24,43 +24,7 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.router.navigateByUrl('/auth');
-    this.toastr.success('Log Out', ' Successfull!!');
+    this.toastr.success('Successfull!!', 'Logout');
     localStorage.clear();
   }
-
-  // openDialog() {
-  //   const dialogRef = this.dialog.open(LoginDialogComponent, {
-  //     width: '250px',
-  //     height: '400px'
-  //   });
-
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     this.authService.login(result.username, result.password);
-  //   });
-  // }
 }
-
-
-// @Component({
-//   selector: 'app-login-dialog',
-//   templateUrl: './login.dialog.html',
-// })
-// export class LoginDialogComponent {
-
-//   username: string;
-//   password: string;
-
-//   constructor(
-//     public dialogRef: MatDialogRef<LoginDialogComponent>,
-//     @Inject(MAT_DIALOG_DATA) public data: any) { }
-
-//   onNoClick(): void {
-//     this.dialogRef.close();
-//   }
-
-//   login() {
-//     if (this.username && this.password) {
-//       this.dialogRef.close({ username: this.username, password: this.password });
-//     }
-//   }
-// }

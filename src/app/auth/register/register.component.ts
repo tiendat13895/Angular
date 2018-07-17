@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { IUSer } from '../../interfaces/IUser';
-// import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
     Validators.required
   ]);
   form: FormGroup;
-  constructor(fb: FormBuilder, private AuthService: AuthService, private toastr: ToastrService) {
+  constructor(fb: FormBuilder, private AuthService: AuthService, private toastr: ToastrService, private router: Router) {
     this.form = fb.group({
       username: this.username,
       fulname: this.fullname,
@@ -51,7 +51,6 @@ export class RegisterComponent implements OnInit {
     fullName: '',
     email: '',
     password: '',
-    // confirmPassword: '',
   }
 
   register() {
@@ -60,11 +59,10 @@ export class RegisterComponent implements OnInit {
     this.user.fullName = this.form.value.fullname;
     this.user.email = this.form.value.email;
     this.user.password = this.form.value.password;
-    // this.user.confirmPassword = this.form.value.confirmPassword;
 
-    // console.log(this.user);
     this.AuthService.createUser(this.user);
     this.toastr.success('Successfull!!', 'Register');
+    this.router.navigate(['/auth/login']);
   }
 }
 

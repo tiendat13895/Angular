@@ -45,6 +45,9 @@
         <strong>match</strong>
       </mat-error>
     </mat-form-field>
+    <mat-form-field class="form-field">
+      <input matInput type="text" placeholder="Imgurl" id="imgurl" name="imgurl" [formControl]="imgurl">
+    </mat-form-field>
     <button [disabled]="!form.valid" class="btn-login" mat-raised-button color="primary">Register</button>
   </form>
 </mat-card>

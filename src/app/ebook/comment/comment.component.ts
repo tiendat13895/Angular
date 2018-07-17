@@ -2,8 +2,6 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { IComment } from '../../interfaces/IComment';
 import { CommentService } from '../../shared/services/comment.service';
 import { ToastrService } from 'ngx-toastr';
-import { IBook } from '../../interfaces/IBook';
-import { BookService } from '../../shared';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '../../../../node_modules/@angular/material';
 import { RemoveCommentComponent } from '../remove-comment/remove-comment.component';

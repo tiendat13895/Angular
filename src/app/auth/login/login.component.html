@@ -8,14 +8,6 @@
       <mat-form-field class="form-field">
         <input matInput type="password" required maxlength="10" placeholder="Password" id="password" name="password" ngModel>
       </mat-form-field>
-      <!-- <div ngModelGroup="fullName">
-        <mat-form-field class="form-field">
-          <input matInput type="text" placeholder="Full name" id="fullname" name="fullname" ngModel>
-        </mat-form-field>
-        <mat-form-field class="form-field">
-          <input matInput type="text" placeholder="Last name" id="lastName" name="lastName" ngModel>
-        </mat-form-field>
-      </div> -->
       <button type="submit" class="btn-login" mat-raised-button color="primary">Login</button>
       <button type="button" class="btn-register" mat-raised-button color="warn" [routerLink]="['/auth','register']">Register</button>
     </form>

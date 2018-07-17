@@ -5,50 +5,74 @@
       "cover": "assets/book-cover-1.png",
       "title": "Lap trinh C++",
       "price": "20000",
-      "instock": true
+      "instock": true,
+      "url": "assets/PDF/Angular4.pdf"
     },
     {
       "id": 2,
       "cover": "assets/book-cover-3.png",
       "title": "Angular",
       "price": 10000,
-      "instock": true
+      "instock": true,
+      "url": "assets/PDF/Angular4.pdf",
+      "text": "Cho dù bạn là người mới đến với Angular hoặc đã biết qua Angular và mới tiếp cận với Angular 4. Chào mừng bạn đến với khoá học Angular 4 từ Janeto Traning Center Cuốn sách này cung cấp những điều cơ bản mà bạn cần để bắt đầu xây dựng một ứng dụng Angular 4. Khi chúng ta hoàn thành khoá học này chúng ta sẽ khám phá ra nhiều tính năng của Angular và có câu trả lời cho những câu hỏi quan trọng. Ví dụ như\n- Một “component” là gì?\n- Chúng ta sẽ viết mã HTML ở đâu trong source?\n- Khi nào chúng ta nên sử dụng “data binding”?\n- Tại sao chúng ta lại cần một “service”?\n- Làm thế nào để chúng ta xây dựng được một ứng dụng Angular?\nXuyên suốt cuốn sách sẽ là những hướng dẫn cho bạn đi đúng hướng, giúp cho cuộc hành trình các bạn tiếp cận với Angular sẽ đơn giản và hiệu quả hơn.\nĐể bắt đầu hành trình này, bạn sẽ cần có một cái nhìn toàn cảnh về Angular. Đơn giản mà nói, Angular là một Javascript framework để xây dựng những ứng dụng phía client sử dụng HTML, CSS và một ngôn ngữ lập trình như Javascript."
     },
     {
       "id": 3,
       "cover": "assets/book-cover-5.png",
       "title": "Front End",
       "price": 10000,
-      "instock": true
+      "instock": true,
+      "url": "assets/PDF/Angular4.pdf"
     },
     {
       "id": 4,
       "cover": "assets/book-cover-4.png",
       "title": "MongoDB",
       "price": 10000,
-      "instock": true
+      "instock": true,
+      "url": "assets/PDF/Angular4.pdf"
     },
     {
       "id": 5,
       "cover": "assets/Book-cover-2.png",
       "title": "NodeJS",
       "price": 10000,
-      "instock": true
+      "instock": true,
+      "url": "assets/PDF/Angular4.pdf"
     }
   ],
   "users": [
     {
-      "id": "tiendat",
-      "username": "tiendat",
-      "password": "123456",
-      "fullname": "Nguyen Tien Dat",
-      "email": "tiendat@gmail.com"
-    },
-    {
       "id": "admin",
+      "imgurl": "assets/person.png",
       "username": "admin",
       "email": "admin@gmail.com",
       "password": "123"
+    },
+    {
+      "id": "tiendat",
+      "imgurl": "assets/avata.jpg",
+      "username": "tiendat",
+      "email": "tiendat@gmail.com",
+      "password": "123456"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1531709115475,
+      "bookid": "2",
+      "username": "admin",
+      "userimg": "assets/person.png",
+      "comment": "asdasdsa",
+      "datetime": 1531709115475
+    },
+    {
+      "id": 1531805909905,
+      "bookid": "1",
+      "username": "admin",
+      "comment": "Good",
+      "datetime": 1531805909905
     }
   ]
 }

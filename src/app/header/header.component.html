@@ -4,19 +4,14 @@
   </div>
   <div class="menu">
     <ul>
-      <li [routerLink]="['']" class="nav-menu">Ebook</li>
-      <li [routerLink]="['class']" class="nav-menu">Class</li>
+      <li class="nav-menu" [routerLink]="['']">Ebook</li>
+      <li class="nav-menu" [routerLink]="['class']">Class</li>
       <li class="nav-menu">|</li>
-      <!-- <li class="nav-menu" *ngIf="user?.username">{{user?.username}}</li> -->
-      <!-- <li class="nav-menu" *ngIf="!user?.username" (click)="openDialog()">LOGIN</li> -->
-      <!-- <li class="nav-menu" *ngIf="!user?.username" [routerLink]="['/auth','login']">LOGIN</li>
-      <li class="nav-menu" *ngIf="!user?.username" [routerLink]="['/auth','register']">SIGN UP</li> -->
-      <button mat-button [matMenuTriggerFor]="menu"  [innerHTML]="(user | async).username"></button>
+      <button mat-button [matMenuTriggerFor]="menu" [innerHTML]="(user | async).username"></button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item>Profile</button>
         <button mat-menu-item (click)="logout()">Log Out</button>
       </mat-menu>
-
     </ul>
   </div>
 </header>
