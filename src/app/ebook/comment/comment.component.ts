@@ -13,15 +13,7 @@ import { RemoveCommentComponent } from '../remove-comment/remove-comment.compone
 })
 export class CommentComponent implements OnInit {
 
-  comment1: IComment = {
-    id: 0,
-    bookid: 0,
-    username: '',
-    comment: '',
-    datetime: 0,
-  };
   constructor(private commentService: CommentService, private toastr: ToastrService, private activeRoute: ActivatedRoute, private dialog: MatDialog) { }
-
 
   originComments: IComment[] = [];
   comment: IComment = {
