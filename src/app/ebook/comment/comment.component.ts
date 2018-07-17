@@ -16,13 +16,14 @@ export class CommentComponent implements OnInit {
   constructor(private commentService: CommentService, private toastr: ToastrService, private activeRoute: ActivatedRoute, private dialog: MatDialog) { }
 
   originComments: IComment[] = [];
-  comment: IComment = {
+  cmt: IComment = {
     id: 0,
     bookid: 0,
     username: '',
     comment: '',
     datetime: 0,
   };
+  comments: IComment[];
   commentstr: string;
   showdelete: boolean = false;
 
@@ -45,15 +46,15 @@ export class CommentComponent implements OnInit {
   }
 
   addComment() {
-    this.comment.bookid = this.activeRoute.snapshot.params['id'];
-    this.comment.username = localStorage.getItem('username');
-    this.comment.comment = this.commentstr;
-    this.comment.datetime = Date.now();
-    this.commentService.createComment(this.comment);
+    this.cmt.bookid = this.activeRoute.snapshot.params['id'];
+    this.cmt.username = localStorage.getItem('username');
+    this.cmt.comment = this.commentstr;
+    this.cmt.datetime = Date.now();
+    this.commentService.createComment(this.cmt);
     this.toastr.success('Successfull!!', 'Comment');
   }
 
-  openRemoveBookDialog(removeCmt: IComment) {
+  openDeleteCommentDialog(removeCmt: IComment) {
     const dialogRef = this.dialog.open(RemoveCommentComponent, {
       width: '400px',
       height: '200px',
