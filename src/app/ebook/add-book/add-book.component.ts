@@ -11,16 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AddBookComponent implements OnInit {
 
-  book: IBook = {
-    cover: '',
-    id: 0,
-    url: '',
-    instock: true,
-    price: 0,
-    publishDate: new Date(Date.now()),
-    title: '',
-    text: '',
-  };
+  book: IBook;
 
   constructor(private bookService: BookService, private toastr: ToastrService,
     public dialogRef: MatDialogRef<AddBookComponent>,

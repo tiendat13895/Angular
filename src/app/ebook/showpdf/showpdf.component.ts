@@ -10,15 +10,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '../../../../node_modules/@angular
 })
 export class ShowpdfComponent implements OnInit {
   pageurl: SafeResourceUrl;
-  book: IBook = {
-    cover: '',
-    id: 0,
-    url: '',
-    instock: true,
-    price: 0,
-    publishDate: new Date(Date.now()),
-    title: ''
-  };
+  book: IBook;
 
   constructor(private domSanitizer: DomSanitizer,
     public dialogRef: MatDialogRef<ShowpdfComponent>,
