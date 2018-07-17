@@ -16,7 +16,7 @@ export class CommentComponent implements OnInit {
   constructor(private commentService: CommentService, private toastr: ToastrService, private activeRoute: ActivatedRoute, private dialog: MatDialog) { }
 
   originComments: IComment[] = [];
-  comments: IComment = {
+  comment: IComment = {
     id: 0,
     bookid: 0,
     username: '',
@@ -45,11 +45,11 @@ export class CommentComponent implements OnInit {
   }
 
   addComment() {
-    this.comments.bookid = this.activeRoute.snapshot.params['id'];
-    this.comments.username = localStorage.getItem('username');
-    this.comments.comment = this.commentstr;
-    this.comments.datetime = Date.now();
-    this.commentService.createComment(this.comments);
+    this.comment.bookid = this.activeRoute.snapshot.params['id'];
+    this.comment.username = localStorage.getItem('username');
+    this.comment.comment = this.commentstr;
+    this.comment.datetime = Date.now();
+    this.commentService.createComment(this.comment);
     this.toastr.success('Successfull!!', 'Comment');
   }
 
