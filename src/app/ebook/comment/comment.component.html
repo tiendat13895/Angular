@@ -14,9 +14,10 @@
     <p class="comment-lenght">{{comment.comment}}</p>
     <p>{{comment.datetime | date : format : timezone}}</p>
     <button mat-raised-button>Reply</button>
+    <button mat-raised-button color="warn" *ngIf="showdelete" (click)=" openRemoveBookDialog(comment)">Delete</button>
   </div>
 
   <div *ngIf="comments?.length === 0" class="no-comment">
-    <h2>No comment</h2>
+    <h2>*No comment*</h2>
   </div>
 </div>

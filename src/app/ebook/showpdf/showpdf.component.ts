@@ -1,9 +1,7 @@
-import { BookService } from '../../shared';
 import { IBook } from '../../interfaces/IBook';
 import { Component, OnInit, Inject } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser'
 import { MatDialogRef, MAT_DIALOG_DATA } from '../../../../node_modules/@angular/material';
-import { AddBookComponent } from '../add-book/add-book.component';
 
 @Component({
   selector: 'app-showpdf',

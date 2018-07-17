@@ -18,7 +18,8 @@ export class EditBookComponent implements OnInit {
     instock: true,
     price: 0,
     publishDate: new Date(Date.now()),
-    title: ''
+    title: '',
+    text: ''
   };
 
   constructor(private bookService: BookService, private toastr: ToastrService,

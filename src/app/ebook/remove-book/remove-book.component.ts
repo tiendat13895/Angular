@@ -22,9 +22,9 @@ export class RemoveBookComponent implements OnInit {
   ngOnInit() {
   }
 
-  removeBook(book) {
+  removeBook() {
     this.bookService.removeBook(this.book.id);
-    this.dialogRef.close(book);
+    this.dialogRef.close();
     this.toastr.success('Successfull!!', 'Remove Book');
   }
 

@@ -11,12 +11,10 @@ import { Router } from '@angular/router';
 })
 export class LibraryComponent implements OnInit, OnChanges {
 
-  // books: IBook[] = []
   @Input() books: IBook[];
   originBooks: IBook[] = [];
   selectedBook: IBook;
   @Input() keyword = '';
-  // @Input() keyword : string = '';
 
 
   constructor(private router: Router, private bookService: BookService, public dialog: MatDialog) { }
@@ -39,7 +37,6 @@ export class LibraryComponent implements OnInit, OnChanges {
   }
 
   onSearch(keyword: string) {
-    // console.log("1");
     this.books = this.originBooks.filter(book => book.title.toLowerCase().includes(keyword.toLowerCase()));
   }
 }

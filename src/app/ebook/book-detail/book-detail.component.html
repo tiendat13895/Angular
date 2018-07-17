@@ -4,9 +4,15 @@
     <img *ngIf="!book || !book.cover" src='assets/default.png' alt="">
   </div>
   <div class="detail">
-    <h3>Book: {{book?.title}}</h3>
+    <h2>{{book?.title}}</h2>
     <p>Price: {{book?.price | currency:'VND':true}}</p>
     <button (click)="openPDFshowDialog(book)">Read Book</button>
+    <br>
+    <h3>Introduce</h3>
+    <p class="text">{{book?.text}}</p>
+    <div *ngIf="!book?.text">
+      <p>*No Introduce*</p>
+    </div>
   </div>
 </div>
 <app-comment></app-comment>

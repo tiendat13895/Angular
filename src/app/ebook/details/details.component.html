@@ -4,7 +4,6 @@
   <p>{{book.price | currency:'VND':true}}</p>
   <p>{{book.instock | instock}}</p>
   <div class="button">
-    <!-- <button (click)="selectBook(book)">GET IT NOW</button> -->
     <button [routerLink]="['book', book.id]">GET IT NOW</button>
   </div>
   <div *ngIf="isBackdrop" class="backdrop">

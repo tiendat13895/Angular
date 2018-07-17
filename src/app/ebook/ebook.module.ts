@@ -16,13 +16,13 @@ import { SearchComponent } from './search/search.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DetailsComponent } from './details/details.component';
-import { UploadModule } from './load/upload.module';
 import { CommentComponent } from './comment/comment.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { ShowpdfComponent } from './showpdf/showpdf.component';
+import { RemoveCommentComponent } from './remove-comment/remove-comment.component';
 
 @NgModule({
-    imports: [CommonModule, FormsModule, MatDialogModule, MatInputModule, MatFormFieldModule, MatButtonModule, EBookRoutingModule, UploadModule, PdfViewerModule],
+    imports: [CommonModule, FormsModule, MatDialogModule, MatInputModule, MatFormFieldModule, MatButtonModule, EBookRoutingModule, PdfViewerModule],
     exports: [],
     declarations: [
         BookComponent,
@@ -36,14 +36,16 @@ import { ShowpdfComponent } from './showpdf/showpdf.component';
         SearchComponent,
         DetailsComponent,
         CommentComponent,
-        ShowpdfComponent
+        ShowpdfComponent,
+        RemoveCommentComponent
     ],
     providers: [],
     entryComponents: [
         AddBookComponent,
         EditBookComponent,
         RemoveBookComponent,
-        ShowpdfComponent
+        ShowpdfComponent,
+        RemoveCommentComponent
     ]
 })
 export class EBookModule { }

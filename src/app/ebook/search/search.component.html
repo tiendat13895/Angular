@@ -1,15 +1,12 @@
 <div class="menu">
   <h2>POPULAR E-BOOKS</h2>
-  <!-- <img class="img-1" src="assets/grid.png" alt="">
-  <img class="img-2" src="assets/menubt.png" alt=""> -->
-  <!-- <input *ngIf="show" type="search" placeholder="Search book" [(ngModel)]="keyword" (blur)="onChange(keyword)" (change)="onChange(keyword)"> -->
-  <mat-form-field *ngIf="show" class="example-full-width">
+  <mat-form-field *ngIf="showip" class="example-full-width">
     <input matInput placeholder="Search" type="search" [(ngModel)]="keyword" (blur)="onChange(keyword)" (change)="onChange(keyword)">
   </mat-form-field>
   <button (click)="showinput()" class="control">
     <span class="fa fa-search"></span>
   </button>
-  <button (click)="openAddBookDialog()" class="control">
+  <button (click)="openAddBookDialog()" *ngIf="showadd" class="control">
     <span class="fa fa-plus"></span>
   </button>
 </div>

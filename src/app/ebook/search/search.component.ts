@@ -11,7 +11,8 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class SearchComponent implements OnInit {
 
-  show: boolean = false;
+  showip: boolean = false;
+  showadd: boolean = false;
   @Input() keyword: string = '';
   @Output() keywordChange = new EventEmitter<String>();
   @Input() books: IBook[];
@@ -31,10 +32,12 @@ export class SearchComponent implements OnInit {
     };
     this.bookService.books.subscribe(observer);
     this.bookService.getBooks();
+
+    if (localStorage.getItem('username') == "admin") { this.showadd = true }
   }
 
   showinput() {
-    this.show = !this.show;
+    this.showip = !this.showip;
   }
 
   onChange(key: string) {
@@ -45,7 +48,7 @@ export class SearchComponent implements OnInit {
   openAddBookDialog() {
     const dialogRef = this.dialog.open(AddBookComponent, {
       width: '400px',
-      height: '400px'
+      height: '600px'
     });
   }
 }

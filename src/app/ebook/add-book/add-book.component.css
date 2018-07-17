@@ -4,3 +4,6 @@ mat-form-field {
 app-upload{
     float: right;
 }
+textarea{
+    height: 200px;
+}

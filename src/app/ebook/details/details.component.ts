@@ -19,25 +19,14 @@ export class DetailsComponent implements OnInit {
   ngOnInit() {
   }
 
-  // down(){
-  //       alert(`You want to buy ${this.book.title.toUpperCase()} book?`);
-  // }
-
-  // selectBook(book: IBook) {
-  //   // console.log(this.book.title);
-  //   if(this.authService.user.username === 'dat'){
-  //     this.select.emit(this.book);
-  //   }
-  // }
-
   showBackdrop() {
-    if (!this.isBackdrop) {
+    if (!this.isBackdrop && localStorage.getItem('username') == "admin") {
       this.isBackdrop = true;
     }
   }
 
   hideBackdrop() {
-    if (this.isBackdrop) {
+    if (this.isBackdrop && localStorage.getItem('username') == "admin") {
       this.isBackdrop = false;
     }
   }
@@ -45,7 +34,7 @@ export class DetailsComponent implements OnInit {
   openEditBookDialog(editbook: IBook) {
     const dialogRef = this.dialog.open(EditBookComponent, {
       width: '400px',
-      height: '400px',
+      height: '600px',
       data: editbook
     });
   }

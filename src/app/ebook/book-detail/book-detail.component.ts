@@ -24,8 +24,8 @@ export class BookDetailComponent implements OnInit {
 
   openPDFshowDialog(pdfbook: IBook) {
     const dialogRef = this.dialog.open(ShowpdfComponent, {
-      width: '800px',
-      height: '950px',
+      width: '920px',
+      height: '850px',
       data: pdfbook
     });
   }

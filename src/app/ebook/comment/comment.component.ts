@@ -1,10 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { IComment } from '../../interfaces/IComment';
 import { CommentService } from '../../shared/services/comment.service';
 import { ToastrService } from 'ngx-toastr';
 import { IBook } from '../../interfaces/IBook';
 import { BookService } from '../../shared';
 import { ActivatedRoute } from '@angular/router';
+import { MatDialog } from '../../../../node_modules/@angular/material';
+import { RemoveCommentComponent } from '../remove-comment/remove-comment.component';
 
 @Component({
   selector: 'app-comment',
@@ -13,10 +15,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CommentComponent implements OnInit {
 
-  constructor(private commentService: CommentService, private toastr: ToastrService, private bookService: BookService, private activeRoute: ActivatedRoute) { }
+  comment1: IComment = {
+    id: 0,
+    bookid: 0,
+    username: '',
+    comment: '',
+    datetime: 0,
+  };
+  constructor(private commentService: CommentService, private toastr: ToastrService, private activeRoute: ActivatedRoute, private dialog: MatDialog) { }
+
 
   originComments: IComment[] = [];
-  book: IBook;
   comment: IComment = {
     id: 0,
     bookid: 0,
@@ -25,6 +34,7 @@ export class CommentComponent implements OnInit {
     datetime: 0,
   };
   commentstr: string;
+  showdelete: boolean = false;
 
   ngOnInit() {
     const id = this.activeRoute.snapshot.params['id'];
@@ -40,11 +50,11 @@ export class CommentComponent implements OnInit {
     };
     this.commentService.comments.subscribe(observer);
     this.commentService.getComments(id);
+
+    if (localStorage.getItem('username') == "admin") { this.showdelete = true }
   }
 
-
   addComment() {
-    // console.log(id);
     this.comment.bookid = this.activeRoute.snapshot.params['id'];
     this.comment.username = localStorage.getItem('username');
     this.comment.comment = this.commentstr;
@@ -53,4 +63,11 @@ export class CommentComponent implements OnInit {
     this.toastr.success('Successfull!!', 'Comment');
   }
 
+  openRemoveBookDialog(removeCmt: IComment) {
+    const dialogRef = this.dialog.open(RemoveCommentComponent, {
+      width: '400px',
+      height: '200px',
+      data: removeCmt
+    });
+  }
 }

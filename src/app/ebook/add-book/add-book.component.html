@@ -9,8 +9,10 @@
     <input matInput type="text" [(ngModel)]="book.price" placeholder="Price">
   </mat-form-field>
   <mat-form-field>
-    <input matInput type="text" [(ngModel)]="book.url" placeholder="Book Url File">
+    <input matInput type="text" [(ngModel)]="book.url" placeholder="Book Url">
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput placeholder="Text of book" id="commentstr" [(ngModel)]="book.text"></textarea>
   </mat-form-field>
   <button mat-raised-button color="primary" (click)="addBook(book)">Add</button>
-  <!-- <app-upload></app-upload> -->
 </div>
