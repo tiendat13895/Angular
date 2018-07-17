@@ -31,7 +31,7 @@ export class CommentComponent implements OnInit {
 
     const observer = {
       next: function (data) {
-        this.comments = data;
+        this.comment = data;
         this.originComments = data;
       }.bind(this),
       error: function (err) {
